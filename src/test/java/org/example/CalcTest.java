@@ -54,4 +54,14 @@ class CalcTest {
         int result = calc.summ(a, b);
         Assertions.assertEquals(expectedResult, result, "Не тот ответ");
     }
+
+    @ParameterizedTest(name = "#{index} - вычитание из {0} - {1}, ожидаем {2}")
+    @CsvSource({"3,2,1", "-1,2,-3", "0,0,0"})
+    @DisplayName("Проверка вычитания 3")
+    @Tag("param")
+    void vych(int a, int b, int expectedResult) {
+        Calc calc = new Calc();
+        int result = calc.vych(a, b);
+        Assertions.assertEquals(expectedResult, result, "Не тот ответ");
+    }
 }
